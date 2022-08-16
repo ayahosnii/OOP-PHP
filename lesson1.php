@@ -5,7 +5,7 @@ class Employee // template contain Properties and operators
     public $age;
     public $address;
 
-    public $salary;
+    public $salary = 1500;
     public $tax;
     public $overtime;
     public $overtimeRate;
@@ -14,10 +14,20 @@ class Employee // template contain Properties and operators
 }
 
 $ahmed = new Employee(); // =>ahmed is an objech has properties;
-$ahmed->name = 'Ahmed Mohamed Ibrahim';
-echo $ahmed-> name;
-is_a($ahmed, 'Employee');
-//var_dump($ahmed);
+$ahmed->name = 'Aya';
+$ahmed->age = 24;
+$ahmed->address = 'St.';
+$ahmed->salary = 20000;
+$ahmed->tax = 0.03;
+$ahmed->overtime = 20;
+$ahmed->overtimeRate = 15;
+$ahmed->abbsent = 1;
+$ahmed->abbsentRate = 75;
+//echo $ahmed-> name;
+//is_a($ahmed, 'Employee');
+echo '<pre>';
+var_dump($ahmed);
+echo '<pre>';
 
 class Car
 {
@@ -26,5 +36,17 @@ class Car
     public $rims;
     public $speed;
     public $horsePower;
-
+    public $color;
 }
+
+/*$bmw = new Car();
+$bmw->speed = 320;
+$bmw->doors = 2;
+$bmw->rims = 'Sports';*/
+
+function calculateOverTime($overtime, $overtimeRate)
+{
+    return $overtime * $overtimeRate;
+}
+
+$ahmedOvertimeCalculation = calculateOverTime($ahmed->overtime, $ahmed->overtimeRate);

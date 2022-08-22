@@ -98,7 +98,7 @@ class Student
     public function getSubjectScore($subjectName)
     {
         if (array_key_exists($subjectName, $this->subjects)){
-            $this->subjects[$subjectName] = $value;
+            return $this->subjects[$subjectName];
         } else{
             throw new Exception('Sorry we don\'nt have a subject of name '. $subjectName);
         }

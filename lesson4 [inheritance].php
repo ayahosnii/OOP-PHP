@@ -31,6 +31,8 @@ class Student
     protected $minScore = 150;
     public $maxScore = 300;
 
+    public static $teacher = 'Ahmed Mohamed Ali';
+
     const MIN_AGE = 20;
     const MAX_AGE = 30;
 
@@ -101,7 +103,7 @@ class Student
     public function getSubjectScore($subjectName)
     {
         if (array_key_exists($subjectName, $this->subjects)){
-            $this->subjects[$subjectName] = $value;
+            return $this->subjects[$subjectName];
         } else{
             throw new Exception('Sorry we don\'nt have a subject of name '. $subjectName);
         }
@@ -133,6 +135,8 @@ class Grade1Student extends Student
 }
 
 $aya = new Grade1Student('Aya Hosny', 24);
+echo $aya->getName() . ' techer\'s name is ' . Student::$teacher;
+echo '<pre>';
 $aya->setSubjectScore('Arabic', 50);
 //var_dump($aya);
 echo $aya->getAge();

@@ -109,7 +109,17 @@ class Student
         }
     }
 
+    public static function sayWelcome()
+    {
 
+    }
+
+    public function showTeacherName()
+    {
+        echo $this->name;
+        echo self::MIN_AGE;
+        return self::$teacher;
+    }
 }
 
 class Grade1Student extends Student

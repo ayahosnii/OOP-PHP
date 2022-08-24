@@ -64,6 +64,11 @@ class SuperVisor extends Employee implements EmployeeInterFace
 {
     public $successfulProjects;
 
+    public function showName()
+    {
+        return 'Welcome Manager ' . $this->firstname . ' ' . $this->lastname;
+    }
+
     public function showTotalSalary()
     {
         return $this->getSalary() + $this->getOverTime() - $this->getAbbsent() + $this->successfulProjects;
@@ -75,10 +80,10 @@ class SuperVisor extends Employee implements EmployeeInterFace
     }
 }
 
-class Worker extends Employee
+/*class Worker extends Employee
 {
     public $bonus = 100;
-}
+}*/
 
 
 

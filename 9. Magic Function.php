@@ -43,11 +43,39 @@ class Database
 
     public function __invoke($welcome)
     {
+        //method is called when a script tries to call an object as a function.
         echo 'Welcome to the object', $welcome;
     }
+
+    public function __clone()
+    {
+        $this->username = NULL;
+        $this->password = NULL;
+    }
 }
-$obj = new Database('mysql://hostname=localhost:dbname=fitness', 'root', '1234');
+
+class User
+{
+    public $name;
+    public $age;
+    public $classRoom;
+}
+
+$aya = new User;
+$aya->name = 'Aya';
+$aya->age = 24;
+$aya->classRoom = '4th Grade';
+
+/*$obj = new Database('mysql:host=localhost', "'aya'@'%aya'", '1961998***');*/
 /*$serialize = serialize($obj);
 echo unserialize($serialize);*/
 
-echo $obj;
+/*$obj('Aya');
+var_export($arr);*/
+
+/*$obj2 = clone($obj);*/
+$alaa = clone($aya);
+$alaa->name = 'Alaa';
+$alaa->age = 22;
+
+var_dump($alaa, $aya);

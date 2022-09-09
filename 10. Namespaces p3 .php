@@ -1,14 +1,15 @@
 <?php
 
 namespace Main\Utilities;
-    class A
+    class DateTime
     {
     }
 
 
 
-    class B
+    /*class substr
     {
-    }
+    }*/
 
 
+$a = new \PDO();
